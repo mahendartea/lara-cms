@@ -27,6 +27,10 @@ class SubMenuResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
     protected static ?string $navigationGroup = 'Manajemen Menu';
     protected static ?string $navigationLabel = 'Sub Menu';
+    public static function getPluralLabel(): string
+    {
+        return 'Daftar Sub Menu'; // Ganti dengan label jamak yang diinginkan
+    }
 
     public static function form(Form $form): Form
     {
@@ -34,6 +38,7 @@ class SubMenuResource extends Resource
             ->schema([
                 TextInput::make('name')
                     ->required()
+                    ->label('Nama')
                     ->afterStateHydrated(function (TextInput $component, ?string $state) {
                         if (!empty($state)) {
                             $component->state(ucwords($state));
@@ -77,9 +82,9 @@ class SubMenuResource extends Resource
                     ->placeholder('ex: heroicon-o-heart')
                     ->helperText('Gunakan heroicon dengan format heroicon-{style}-{name}.'),
                 ColorPicker::make('color')
-                    ->label('Color')
+                    ->label('Warna')
                     ->placeholder('#3498db'),
-                TextInput::make('description'),
+                TextInput::make('description')->label('Deskripsi'),
 
             ]);
     }

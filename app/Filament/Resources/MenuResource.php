@@ -29,6 +29,10 @@ class MenuResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
     protected static ?string $navigationGroup = 'Manajemen Menu';
     protected static ?string $navigationLabel = 'Menu';
+    public static function getPluralLabel(): string
+    {
+        return 'Daftar Menu'; // Ganti dengan label jamak yang diinginkan
+    }
 
 
     public static function form(Form $form): Form
@@ -37,6 +41,7 @@ class MenuResource extends Resource
             ->schema([
                 TextInput::make('name')
                     ->required()
+                    ->label('Nama')
                     ->afterStateHydrated(function (TextInput $component, ?string $state) {
                         if (!empty($state)) {
                             $component->state(ucwords($state));
@@ -77,7 +82,7 @@ class MenuResource extends Resource
                 ColorPicker::make('color')
                     ->label('Color')
                     ->placeholder('#3498db'),
-                TextInput::make('description'),
+                TextInput::make('description')->label('Deskripsi'),
 
             ]);
     }
