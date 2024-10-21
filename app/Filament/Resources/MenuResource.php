@@ -29,6 +29,8 @@ class MenuResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
     protected static ?string $navigationGroup = 'Manajemen Menu';
     protected static ?string $navigationLabel = 'Menu';
+    protected static bool $shouldRegisterNavigation = false;
+
     public static function getPluralLabel(): string
     {
         return 'Daftar Menu'; // Ganti dengan label jamak yang diinginkan
