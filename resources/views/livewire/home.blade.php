@@ -26,9 +26,8 @@
     </nav>
 
 
-    <header
+    <section
         class="mt-28 bg-center bg-no-repeat bg-[url('https://www.djkn.kemenkeu.go.id/files/images/2022/11/Salinan_dari_KPKNL_BANDA_ACEH1.jpg')] bg-gray-800 bg-blend-multiply">
-
         <div class="container px-6 py-16 mx-auto">
             <div class="items-center lg:flex">
                 <div class="w-full lg:w-2/3">
@@ -43,14 +42,19 @@
                         </h1>
 
                         <h1 class="text-2xl font-semibold md:text-[#faec04] dark:text-white lg:text-3xl mt-10">
-                            Membangun
+                            "Membangun
                             Kembali Masyarakat Aceh
                             <span class="text-blue-600 dark:text-yellow-500">Maju
-                                dan Sejahtera</span>
+                                dan Sejahtera"</span>
                         </h1>
 
+                        <p class=" text-gray-300 dark:text-gray-300 text-2xl mt-2 font-serif font-extrabold">
+                            Dr. Marniati, S.E., M.Kes
+                        </p>
+                        <p class="text-white">Ketua Partai Perjuangan Aceh</p>
+
                         <button
-                            class="w-full px-5 py-2 mt-6 text-sm tracking-wider text-white uppercase transition-colors duration-300 transform bg-blue-700 rounded-lg lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
+                            class="w-full px-5 py-2 mt-10 text-sm tracking-wider text-white uppercase transition-colors duration-300 transform bg-blue-700 rounded-lg lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
                             Daftar
                             Anggota
                         </button>
@@ -63,163 +67,66 @@
                 </div>
             </div>
         </div>
-    </header>
+    </section>
 
     <section class="bg-white dark:bg-gray-900">
-        <div class="container px-6 py-8 mx-auto">
-            <h2 class="text-2xl font-semibold text-center md:text-[#040181] uppercase my-5 lg:text-3xl dark:text-white">
-                Anggota
-                Pengurus
-            </h2>
+        <div class="h-[32rem] bg-gray-100 dark:bg-gray-800">
+            <div class="container px-6 pb-5 pt-20 mx-auto">
+                <h1 class="text-2xl font-semibold text-center text-[#040181] capitalize lg:text-3xl dark:text-white">
+                    Pengurus Utama DPP</h1>
 
-            <div class="grid gap-8 mt-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                <div class="w-full max-w-xs text-center">
-                    <img class="object-cover object-center w-full h-48 mx-auto rounded-lg"
-                        src="https://images.unsplash.com/photo-1493863641943-9b68992a8d07?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=739&q=80"
-                        alt="avatar" />
-
-                    <div class="mt-2">
-                        <h3 class="text-lg font-medium text-gray-700 dark:text-gray-200">Ahmed Omer</h3>
-                        <span class="mt-1 font-medium text-gray-600 dark:text-gray-300">CEO</span>
-                    </div>
+                <div class="flex justify-center mx-auto mt-6">
+                    <span class="inline-block w-40 h-1 bg-[#040181] rounded-full"></span>
+                    <span class="inline-block w-3 h-1 mx-1 bg-[#040181] rounded-full"></span>
+                    <span class="inline-block w-1 h-1 bg-[#040181] rounded-full"></span>
                 </div>
 
-                <div class="w-full max-w-xs text-center">
-                    <img class="object-cover object-center w-full h-48 mx-auto rounded-lg"
-                        src="https://images.unsplash.com/photo-1516756587022-7891ad56a8cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
-                        alt="avatar" />
+            </div>
+        </div>
 
-                    <div class="mt-2">
-                        <h3 class="text-lg font-medium text-gray-700 dark:text-gray-200">Jane Doe</h3>
-                        <span class="mt-1 font-medium text-gray-600 dark:text-gray-300">Co-founder</span>
-                    </div>
+        <div class="container px-6 py-10 mx-auto -mt-72 sm:-mt-80 md:-mt-96">
+            <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-3">
+                <div class="flex flex-col items-center p-4 border sm:p-6 rounded-xl dark:border-gray-700">
+                    <img class="object-cover w-full rounded-xl aspect-square"
+                        src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
+                        alt="">
+
+                    <h1 class="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white">arthur melo</h1>
+
+                    <p class="mt-2 text-gray-500 capitalize dark:text-gray-300">Sekretaris</p>
+
+
                 </div>
 
-                <div class="w-full max-w-xs text-center">
-                    <img class="object-cover object-center w-full h-48 mx-auto rounded-lg"
-                        src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=731&q=80"
-                        alt="avatar" />
+                <div class="flex flex-col items-center p-4 border sm:p-6 rounded-xl dark:border-gray-700">
+                    <img class="object-cover w-full rounded-xl aspect-square"
+                        src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
+                        alt="">
 
-                    <div class="mt-2">
-                        <h3 class="text-lg font-medium text-gray-700 dark:text-gray-200">Steve Ben</h3>
-                        <span class="mt-1 font-medium text-gray-600 dark:text-gray-300">UI/UX</span>
-                    </div>
+                    <h1 class="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white">arthur melo</h1>
+
+                    <p class="mt-2 text-gray-500 capitalize dark:text-gray-300">Bendahara</p>
+
+
                 </div>
 
-                <div class="w-full max-w-xs text-center">
-                    <img class="object-cover object-center w-full h-48 mx-auto rounded-lg"
-                        src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
-                        alt="avatar" />
+                <div class="flex flex-col items-center p-4 border sm:p-6 rounded-xl dark:border-gray-700">
+                    <img class="object-cover w-full rounded-xl aspect-square"
+                        src="https://images.unsplash.com/photo-1531590878845-12627191e687?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
+                        alt="">
 
-                    <div class="mt-2">
-                        <h3 class="text-lg font-medium text-gray-700 dark:text-gray-200">Patterson Johnson</h3>
-                        <span class="mt-1 font-medium text-gray-600 dark:text-gray-300">Software Engineer</span>
-                    </div>
+                    <h1 class="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white">Pamela Anderson
+                    </h1>
+
+                    <p class="mt-2 text-gray-500 capitalize dark:text-gray-300"> Humas </p>
+
+
                 </div>
+
             </div>
         </div>
     </section>
 
-    {{-- acordion    --}}
-    <section class="dark:bg-gray-900 px-10 mx-auto max-w-screen-xl my-10">
-
-        <div id="accordion-open" data-accordion="open">
-            <h2 id="accordion-open-heading-1">
-                <button type="button"
-                    class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
-                    data-accordion-target="#accordion-open-body-1" aria-expanded="true"
-                    aria-controls="accordion-open-body-1">
-                    <span class="flex items-center"><svg class="w-5 h-5 me-2 shrink-0" fill="currentColor"
-                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
-                                clip-rule="evenodd"></path>
-                        </svg> What is Flowbite?</span>
-                    <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M9 5 5 1 1 5" />
-                    </svg>
-                </button>
-            </h2>
-            <div id="accordion-open-body-1" class="hidden" aria-labelledby="accordion-open-heading-1">
-                <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is an open-source library of interactive
-                        components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and more.
-                    </p>
-                    <p class="text-gray-500 dark:text-gray-400">Check out this guide to learn how to <a
-                            href="/docs/getting-started/introduction/"
-                            class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start
-                        developing websites even faster with components on top of Tailwind CSS.</p>
-                </div>
-            </div>
-            <h2 id="accordion-open-heading-2">
-                <button type="button"
-                    class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
-                    data-accordion-target="#accordion-open-body-2" aria-expanded="false"
-                    aria-controls="accordion-open-body-2">
-                    <span class="flex items-center"><svg class="w-5 h-5 me-2 shrink-0" fill="currentColor"
-                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
-                                clip-rule="evenodd"></path>
-                        </svg>Is there a Figma file available?</span>
-                    <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M9 5 5 1 1 5" />
-                    </svg>
-                </button>
-            </h2>
-            <div id="accordion-open-body-2" class="hidden" aria-labelledby="accordion-open-heading-2">
-                <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is first conceptualized and designed
-                        using
-                        the Figma software so everything you see in the library has a design equivalent in our Figma
-                        file.</p>
-                    <p class="text-gray-500 dark:text-gray-400">Check out the <a href="https://flowbite.com/figma/"
-                            class="text-blue-600 dark:text-blue-500 hover:underline">Figma design system</a> based on
-                        the utility classes from Tailwind CSS and components from Flowbite.</p>
-                </div>
-            </div>
-            <h2 id="accordion-open-heading-3">
-                <button type="button"
-                    class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 focus:ring-4 rounded-b-xl focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
-                    data-accordion-target="#accordion-open-body-3" aria-expanded="false"
-                    aria-controls="accordion-open-body-3">
-                    <span class="flex items-center"><svg class="w-5 h-5 me-2 shrink-0" fill="currentColor"
-                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
-                                clip-rule="evenodd"></path>
-                        </svg> What are the differences between Flowbite and Tailwind UI?</span>
-                    <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M9 5 5 1 1 5" />
-                    </svg>
-                </button>
-            </h2>
-            <div id="accordion-open-body-3" class="hidden" aria-labelledby="accordion-open-heading-3">
-                <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">The main difference is that the core components
-                        from Flowbite are open source under the MIT license, whereas Tailwind UI is a paid product.
-                        Another difference is that Flowbite relies on smaller and standalone components, whereas
-                        Tailwind UI offers sections of pages.</p>
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">However, we actually recommend using both
-                        Flowbite, Flowbite Pro, and even Tailwind UI as there is no technical reason stopping you from
-                        using the best of two worlds.</p>
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
-                    <ul class="ps-5 text-gray-500 list-disc dark:text-gray-400">
-                        <li><a href="https://flowbite.com/pro/"
-                                class="text-blue-600 dark:text-blue-500 hover:underline">Flowbite Pro</a></li>
-                        <li><a href="https://tailwindui.com/" rel="nofollow"
-                                class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- component -->
     <section class="text-gray-600 body-font">
@@ -234,8 +141,7 @@
                 <div class="xl:w-1/3 md:w-1/2 p-4">
                     <div class="bg-white p-6 rounded-lg">
                         <img class="lg:h-60 xl:h-56 md:h-64 sm:h-72 xs:h-72 h-72  rounded w-full object-cover object-center mb-6"
-                            src="https://kuyou.id/content/images/ctc_2020021605150668915.jpg"
-                            alt="Image Size 720x400">
+                            src="https://kuyou.id/content/images/ctc_2020021605150668915.jpg" alt="Image Size 720x400">
                         <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
                         <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Chichen Itza</h2>
                         <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat.
