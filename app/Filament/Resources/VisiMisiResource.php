@@ -12,6 +12,8 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -51,7 +53,11 @@ class VisiMisiResource extends Resource
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('visi')->label('Visi'),
+                TextColumn::make('misi')->label('Misi'),
+                TextColumn::make('tujuan')->label('Tujuan'),
+                TextColumn::make('slogan')->label('Slogan'),
+                ImageColumn::make('logo')->label('Logo'),
             ])
             ->filters([
                 //

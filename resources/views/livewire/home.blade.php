@@ -1,11 +1,13 @@
 <div>
-
     <nav
         class="dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-yellow-700 dark:border-gray-600 bg-[#faec04] py-10">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
+        <div class="max-w-screen-xl max-h-16 flex flex-wrap items-center justify-between mx-auto bg-[#faec04]">
             <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-                <img src="assets/img/ppalogo.jpeg" class="h-8" alt="PPA Logo">
-                {{-- <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span> --}}
+                <img src="assets/img/logoPPA.png" class="h-36 bg-transparent no-border" alt="PPA Logo">
+                <span
+                    class="self-center text-2xl md:text-[#040181] font-semibold whitespace-nowrap dark:text-white">Parta
+                    Perjuangan
+                    Aceh</span>
             </a>
 
             <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 " id="navbar-sticky">
@@ -23,43 +25,51 @@
         </div>
     </nav>
 
-    <section class="bg-white mt-32 pt-2">
-        search...
-    </section>
 
-    <section
-        class="bg-center bg-no-repeat bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg')] bg-gray-700 bg-blend-multiply">
-        <div class="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
-            <h1
-                class="text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl uppercase my-10">
-                Partai Perjuangan Aceh</h1>
-            <h1
-                class="text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl dark:text-white mt-10 mb-14">
-                Membangun Kembali Masyarakat Aceh <span class="text-yellow-300 dark:text-yellow-500">Maju dan Sejahtera
-                    & Bahagia</span> Bersama.
-            </h1>
-            <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
-                <a href="#"
-                    class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-yellow-600 rounded-lg bg-yellow-300 hover:bg-yellow-400 focus:ring-4 focus:ring-yellow-300 dark:focus:ring-yellow-900">
-                    Pendaftaran
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 pl-1">
-                        <path fill-rule="evenodd"
-                            d="M8.25 3.75H19.5a.75.75 0 0 1 .75.75v11.25a.75.75 0 0 1-1.5 0V6.31L5.03 20.03a.75.75 0 0 1-1.06-1.06L17.69 5.25H8.25a.75.75 0 0 1 0-1.5Z"
-                            clip-rule="evenodd" />
-                    </svg>
+    <header
+        class="mt-28 bg-center bg-no-repeat bg-[url('https://www.djkn.kemenkeu.go.id/files/images/2022/11/Salinan_dari_KPKNL_BANDA_ACEH1.jpg')] bg-gray-800 bg-blend-multiply">
 
-                </a>
-                <a href="#"
-                    class="inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-white rounded-lg border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400">
-                    Learn more
-                </a>
+        <div class="container px-6 py-16 mx-auto">
+            <div class="items-center lg:flex">
+                <div class="w-full lg:w-2/3">
+                    <div class="w-full">
+
+                        <h1 class="text-5xl font-semibold md:text-[#faec04] dark:text-white lg:text-6xl my-5">
+                            Parta
+                            Perjuangan
+                            Aceh
+                            <span class="text-white dark:text-yellow-500">Maju
+                                dan Sejahtera</span>
+                        </h1>
+
+                        <h1 class="text-2xl font-semibold md:text-[#faec04] dark:text-white lg:text-3xl mt-10">
+                            Membangun
+                            Kembali Masyarakat Aceh
+                            <span class="text-blue-600 dark:text-yellow-500">Maju
+                                dan Sejahtera</span>
+                        </h1>
+
+                        <button
+                            class="w-full px-5 py-2 mt-6 text-sm tracking-wider text-white uppercase transition-colors duration-300 transform bg-blue-700 rounded-lg lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
+                            Daftar
+                            Anggota
+                        </button>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-center w-full mt-6 lg:mt-0 lg:w-1/3">
+                    <img class="w-full h-full lg:max-w-3xl relative top-20 brightness-100" src="assets/img/pimpinan.png"
+                        alt="Catalogue-pana.svg">
+                </div>
             </div>
         </div>
-    </section>
+    </header>
 
     <section class="bg-white dark:bg-gray-900">
         <div class="container px-6 py-8 mx-auto">
-            <h2 class="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">Our Team
+            <h2 class="text-2xl font-semibold text-center md:text-[#040181] uppercase my-5 lg:text-3xl dark:text-white">
+                Anggota
+                Pengurus
             </h2>
 
             <div class="grid gap-8 mt-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
