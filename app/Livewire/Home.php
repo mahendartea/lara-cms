@@ -2,14 +2,17 @@
 
 namespace App\Livewire;
 
+use App\Models\Galery;
 use App\Models\Menu;
+use App\Models\News;
 use Livewire\Component;
 
 class Home extends Component
 {
     public function render()
     {
-        $menu = Menu::all();
-        return view('livewire.home', compact('menu'));
+        $news = News::limit(3)->get();
+        $galeri = Galery::limit(6)->latest()->get();
+        return view('livewire.home', compact('news', 'galeri'));
     }
 }

@@ -100,5 +100,9 @@ class DatabaseSeeder extends Seeder
         foreach ($menus as $menu) {
             Menu::create($menu);
         }
+
+        $this->call([
+            NewsSeeder::class,
+        ]);
     }
 }
