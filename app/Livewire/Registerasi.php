@@ -6,6 +6,12 @@ use Livewire\Component;
 
 class Registerasi extends Component
 {
+    public $nik = 1;
+    public $name;
+    public $nickname;
+
+    public function submit() {}
+
     public function render()
     {
         $client = new \GuzzleHttp\Client();
