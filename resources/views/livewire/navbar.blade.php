@@ -4,7 +4,7 @@
             <img src="assets/img/logobiru.jpeg" class="h-28 md:h-32 bg-transparent no-border rounded-b-xl" alt="PPA
             Logo">
             <span class="self-center text-2xl md:text-[#040181] font-semibold whitespace-nowrap dark:text-white
-            hidden md:block">Parta
+            hidden md:block uppercase">Parta
                 Perjuangan
                 Aceh</span>
         </a>

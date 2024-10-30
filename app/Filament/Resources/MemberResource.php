@@ -147,7 +147,7 @@ class MemberResource extends Resource
                     ->sortable()
                     ->getStateUsing(fn($record) => $record->gender === 'L' ? 'Laki-laki' : 'Perempuan')
                     ->label('Jenis Kelamin'),
-                ImageColumn::make('image')
+                ImageColumn::make('foto')
                     ->label('Gambar')
                     ->width(100)
                     ->height(100),
