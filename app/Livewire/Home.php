@@ -11,7 +11,7 @@ class Home extends Component
 {
     public function render()
     {
-        $news = News::limit(3)->get();
+        $news = News::limit(3)->latest()->get();
         $galeri = Galery::limit(6)->latest()->get();
         return view('livewire.home', compact('news', 'galeri'));
     }

@@ -10,7 +10,6 @@
             <span class="inline-block w-3 h-1 mx-1 bg-[#040181] rounded-full"></span>
             <span class="inline-block w-1 h-1 bg-[#040181] rounded-full"></span>
         </div>
-        {{ $nik }}
 
         <form wire:submit.prevent="submit">
             <div class="grid gap-6 mb-6 md:grid-cols-2">

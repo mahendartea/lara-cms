@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        \App\Models\News::factory(10)->create();
 
         User::factory()->create([
             "name" => "Test User",
@@ -101,8 +101,8 @@ class DatabaseSeeder extends Seeder
             Menu::create($menu);
         }
 
-        $this->call([
-            NewsSeeder::class,
-        ]);
+//        $this->call([
+//            NewsSeeder::class,
+//        ]);
     }
 }
