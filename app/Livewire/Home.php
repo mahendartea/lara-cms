@@ -2,17 +2,34 @@
 
 namespace App\Livewire;
 
-use App\Models\Galery;
-use App\Models\Menu;
 use App\Models\News;
+use App\Models\Galery;
 use Livewire\Component;
 
 class Home extends Component
 {
+    public $selectedKategori = null;
+
     public function render()
     {
-        $news = News::limit(3)->latest()->get();
-        $galeri = Galery::limit(6)->latest()->get();
-        return view('livewire.home', compact('news', 'galeri'));
+        // Query untuk galeri dengan filter kategori
+        $galeriQuery = Galery::query();
+        if ($this->selectedKategori) {
+            $galeriQuery->where('kategori', $this->selectedKategori);
+        }
+        $galeri = $galeriQuery->latest()->take(6)->get();
+
+        // Query untuk berita terbaru
+        $news = News::latest()->take(3)->get();
+
+        return view('livewire.home', [
+            'galeri' => $galeri,
+            'news' => $news
+        ]);
+    }
+
+    public function filterKategori($kategori = null)
+    {
+        $this->selectedKategori = $kategori;
     }
 }

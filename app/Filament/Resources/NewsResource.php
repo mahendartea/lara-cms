@@ -71,11 +71,12 @@ class NewsResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('title')
-                    ->label('Nama'),
+                    ->label('Nama')->searchable(),
                 TextColumn::make('content')
                     ->label('Konten')
+                    ->searchable()
                     ->limit(50)
-                    ->tooltip(fn($record) => $record->content),
+                    ->tooltip(fn ($record) => $record->content),
                 ImageColumn::make('image')->width(100)->height(100),
                 TextColumn::make('caption')
             ])
@@ -83,6 +84,7 @@ class NewsResource extends Resource
                 //
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make()
             ])
@@ -105,6 +107,7 @@ class NewsResource extends Resource
         return [
             'index' => Pages\ListNews::route('/'),
             'create' => Pages\CreateNews::route('/create'),
+            'view' => Pages\ViewNews::route('/{record}'),
             'edit' => Pages\EditNews::route('/{record}/edit'),
         ];
     }

@@ -96,10 +96,11 @@
             <main class="relative z-10 w-full mt-8 md:flex md:items-center xl:mt-12">
                 <div class="absolute w-full bg-[#040181] -z-10 md:h-96 rounded-2xl"></div>
 
-                <div class="w-full p-6 bg-blue-600 md:flex md:items-center rounded-2xl md:bg-transparent md:p-0 lg:px-12 md:justify-evenly">
+                <div
+                    class="w-full p-6 bg-blue-600 md:flex md:items-center rounded-2xl md:bg-transparent md:p-0 lg:px-12 md:justify-evenly">
                     <img class="h-24 w-24 md:mx-6 rounded-full object-cover md:h-[32rem] md:w-80
                     lg:h-[36rem] lg:w-[26rem] md:rounded-2xl"
-                         src="/assets/img/pimpinan.png" alt="client photo" />
+                        src="/assets/img/pimpinan.png" alt="client photo" />
 
                     <div class="mt-2 md:mx-6">
                         <div>
@@ -122,8 +123,10 @@
     </section>
 
     <section class="grid lg:grid-cols-2 grid-cols-1 w-full bg-white dark:bg-gray-900 h-[500px]">
-        <div style="background-image:url(/assets/img/slideempat.jpeg);
-        background-size:cover; background-position:center; height:100%"></div>
+        <div
+            style="background-image:url(/assets/img/slideempat.jpeg);
+        background-size:cover; background-position:center; height:100%">
+        </div>
         <div class="flex flex-col items-center justify-center p-10 bg-[#feec03]">
             <h2 class="text-3xl font-bold text-[#040181]">Visi</h2>
             <p class="mt-4 text-lg leading-relaxed text-gray-600 dark:text-gray-300">
@@ -168,10 +171,9 @@
                 @foreach ($news as $berita)
                     <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
                         <img class="object-cover object-center w-full h-64 rounded-lg lg:h-80"
-                            src="{{ $berita->image }}" alt="">
+                            src="{{ $berita->image ?? '' }}" alt="">
 
                         <div class="mt-8 p-5">
-                            {{-- <span class="text-blue-500 uppercase">category</span> --}}
 
                             <h1 class="mt-4 text-xl font-semibold text-gray-800 dark:text-white">
                                 {{ $berita->title }}
@@ -209,11 +211,11 @@
             </div>
         </div>
         <div class="flex justify-center pb-10">
-            <button
+            <a href="/berita"
                 class="px-4 py-2 bg-[#040181] text-white font-semibold rounded-lg shadow-md hover:bg-blue-700
                 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
                 Selengkapnya
-            </button>
+            </a>
         </div>
     </section>
 
@@ -227,41 +229,63 @@
             <span class="inline-block w-16 h-1 bg-[#040181] rounded-full"></span>
             <span class="inline-block w-3 h-1 mx-1 bg-[#040181] rounded-full"></span>
             <span class="inline-block w-1 h-1 bg-[#040181] rounded-full"></span>
+
             <div class="flex items-center justify-center py-4 md:py-8 flex-wrap">
-                <button type="button"
-                    class="text-blue-700 hover:text-white border border-blue-600 bg-white hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:bg-gray-900 dark:focus:ring-blue-800">
+                <button type="button" wire:click="filterKategori"
+                    class="text-[#040181] hover:text-white border bg-white hover:bg-[#040181] focus:ring-4 
+                    focus:outline-none focus:ring-blue-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 
+                    {{ is_null($selectedKategori) ? 'text-[#040181] bg-white border-2  border-[#040181]' : '' }}">
                     Semua
                 </button>
-                <button type="button"
-                    class="text-gray-900 border border-white hover:border-gray-200 dark:border-gray-900 dark:bg-gray-900 dark:hover:border-gray-700 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:text-white dark:focus:ring-gray-800">
+                <button type="button" wire:click="filterKategori('sosialisasi')"
+                    class="text-[#040181] border border-white hover:border-gray-200 dark:border-gray-900 dark:bg-gray-900 
+                    dark:hover:border-gray-700 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full 
+                    text-base font-medium px-5 py-2.5 text-center me-3 mb-3 
+                    {{ $selectedKategori === 'sosialisasi' ? 'text-[#040181] bg-white border-2  border-[#040181]' : '' }}">
                     Sosialisasi
                 </button>
-                <button type="button"
-                    class="text-gray-900 border border-white hover:border-gray-200 dark:border-gray-900 dark:bg-gray-900 dark:hover:border-gray-700 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:text-white dark:focus:ring-gray-800">
+                <button type="button" wire:click="filterKategori('kepartaian')"
+                    class="text-[#040181] border border-white hover:border-gray-200 dark:border-gray-900 dark:bg-gray-900 
+                    dark:hover:border-gray-700 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full 
+                    text-base font-medium px-5 py-2.5 text-center me-3 mb-3
+                    {{ $selectedKategori === 'kepartaian' ? 'text-[#040181] bg-white border-2  border-[#040181]' : '' }}">
                     Kepartaian
                 </button>
-                <button type="button"
-                    class="text-gray-900 border border-white hover:border-gray-200 dark:border-gray-900 dark:bg-gray-900 dark:hover:border-gray-700 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:text-white dark:focus:ring-gray-800">
+                <button type="button" wire:click="filterKategori('solidaritas')"
+                    class="text-[#040181] border border-white hover:border-gray-200 dark:border-gray-900 dark:bg-gray-900 
+                    dark:hover:border-gray-700 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full 
+                    text-base font-medium px-5 py-2.5 text-center me-3 mb-3
+                    {{ $selectedKategori === 'solidaritas' ? 'text-[#040181] bg-white border-2  border-[#040181]' : '' }}">
                     Solidaritas
                 </button>
             </div>
+
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
                 @foreach ($galeri as $gal)
-                    <div>
-                        <img class="h-auto max-w-full rounded-lg" src="{{ $gal->image }}" alt="">
+                    <div class="relative group">
+                        <img class="h-auto max-w-full rounded-lg" src="{{ Storage::url($gal->image) }}"
+                            alt="{{ $gal->name }}">
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center">
+                            <div class="text-white text-center p-4">
+                                <h3 class="text-lg font-semibold">{{ $gal->name }}</h3>
+                                <p class="text-sm">{{ $gal->caption }}</p>
+                                <span class="inline-block px-3 py-1 mt-2 text-sm bg-blue-600 rounded-full">
+                                    {{ ucfirst($gal->kategori) }}
+                                </span>
+                            </div>
+                        </div>
                     </div>
                 @endforeach
-
-                {{-- more images --}}
-
             </div>
         </div>
+
         <div class="flex justify-center mt-10">
-            <button
+            <a href="{{ route('galeri') }}"
                 class="px-4 py-2 bg-[#040181] text-white font-semibold rounded-lg shadow-md hover:bg-blue-700
                 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
                 Selengkapnya
-            </button>
+            </a>
         </div>
     </section>
 

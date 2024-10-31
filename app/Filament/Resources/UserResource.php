@@ -14,6 +14,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\Hash;
 
 class UserResource extends Resource
 {
@@ -27,17 +28,40 @@ class UserResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('name')->required(),
-                TextInput::make('email')->required()->email(),
+                TextInput::make('name')
+                    ->label('Nama')
+                    ->required(),
+                TextInput::make('email')
+                    ->label('Email')
+                    ->required()
+                    ->email(),
                 TextInput::make('password')
+                    ->label('Kata Sandi')
                     ->password()
-                    ->required()
-                    ->visibleOn('create')
-                    ->rules('required', 'confirmed'),
+                    ->required(fn (string $operation): bool => $operation === 'create')
+                    ->confirmed()
+                    ->visible(fn (string $operation): bool => $operation === 'create'),
                 TextInput::make('password_confirmation')
+                    ->label('Konfirmasi Kata Sandi')
                     ->password()
-                    ->required()
-                    ->rules('required', 'confirmed'),
+                    ->required(fn (string $operation): bool => $operation === 'create')
+                    ->visible(fn (string $operation): bool => $operation === 'create'),
+                TextInput::make('password')
+                    ->label('Kata Sandi Baru')
+                    ->password()
+                    ->confirmed()
+                    ->visible(fn (string $operation): bool => $operation === 'edit')
+                    ->dehydrated(fn ($state) => filled($state))
+                    ->afterStateUpdated(function (string $state, $record) {
+                        if (filled($state)) {
+                            $record->password = Hash::make($state);
+                        }
+                    }),
+                TextInput::make('password_confirmation')
+                    ->label('Konfirmasi Kata Sandi Baru')
+                    ->password()
+                    ->visible(fn (string $operation): bool => $operation === 'edit')
+                    ->dehydrated(false),
             ]);
     }
 

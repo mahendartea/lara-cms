@@ -71,17 +71,19 @@ class DocumentResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('title'),
-                TextColumn::make('slug'),
-                IconColumn::make('file') // Ganti 'file' dengan nama field di model
+                TextColumn::make('title')->label('Nama File')->searchable(),
+                IconColumn::make('file')
                     ->label('File')
-                    ->icon(fn($record) => match (pathinfo($record->file, PATHINFO_EXTENSION)) {
-                        'jpg', 'jpeg', 'png' => 'heroicon-o-photo', // Ikon untuk gambar
-                        'pdf' => 'heroicon-o-paper-clip', // Ikon untuk PDF
-                        default => 'heroicon-o-document', // Ikon default
+                    ->icon(fn ($record) => match (pathinfo($record->file, PATHINFO_EXTENSION)) {
+                        'jpg', 'jpeg', 'png' => 'heroicon-o-photo',
+                        'pdf' => 'heroicon-o-paper-clip',
+                        default => 'heroicon-o-document',
                     })
-                    ->tooltip(fn($record) => pathinfo($record->file, PATHINFO_BASENAME)), // Menampilkan nama file sebagai tooltip
-                TextColumn::make('caption'),
+                    ->tooltip(fn ($record) => pathinfo($record->file, PATHINFO_BASENAME))
+                    ->url(
+                        fn ($record): string => Storage::url($record->file),
+                        shouldOpenInNewTab: true
+                    ),
             ])
             ->filters([
                 //

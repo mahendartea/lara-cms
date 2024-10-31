@@ -53,14 +53,22 @@ class GaleryResource extends Resource
                     }),
                 TextInput::make('slug')
                     ->required(),
+                Forms\Components\Select::make('kategori')
+                    ->label('Kategori')
+                    ->options([
+                        'sosialisasi' => 'Sosialisasi',
+                        'kepartaian' => 'Kepartaian',
+                        'solidaritas' => 'Solidaritas',
+                    ])
+                    ->required(),
                 TextInput::make('description'),
-                FileUpload::make('image') // Ganti 'images' dengan nama field yang sesuai
+                FileUpload::make('image')
                     ->label('Upload Images')
-                    ->required() // Tambahkan ini jika upload wajib
-                    ->acceptedFileTypes(['image/jpeg', 'image/png']) // Jenis file yang diterima
-                    ->maxSize(2048) // Ukuran maksimum dalam kilobyte (2 MB)
-                    ->directory('uploads/images') // Direktori tempat menyimpan file
-                    ->preserveFilenames() // Menjaga nama asli file
+                    ->required()
+                    ->acceptedFileTypes(['image/jpeg', 'image/png'])
+                    ->maxSize(2048)
+                    ->directory('uploads/images')
+                    ->preserveFilenames()
                     ->helperText('Unggah gambar dalam format JPG atau PNG. Maksimal 2MB per gambar.'),
                 TextInput::make('caption')
 
@@ -73,6 +81,14 @@ class GaleryResource extends Resource
             ->columns([
                 TextColumn::make('name')
                     ->label('Nama'),
+                TextColumn::make('kategori')
+                    ->badge()
+                    ->color(fn (string $state): string => match ($state) {
+                        'sosialisasi' => 'success',
+                        'kepartaian' => 'danger',
+                        'solidaritas' => 'warning',
+                        default => 'gray',
+                    }),
                 ImageColumn::make('image')->width(100)->height(100),
                 TextColumn::make('caption')
             ])

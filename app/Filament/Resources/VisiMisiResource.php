@@ -40,6 +40,7 @@ class VisiMisiResource extends Resource
                     ->required(),
                 Textarea::make('slogan')->label('Slogan'),
                 FileUpload::make('logo')->label('Logo')
+                    ->required()
                     ->acceptedFileTypes(['image/jpeg', 'image/png'])
                     ->maxSize(2048)
                     ->directory('uploads/images')

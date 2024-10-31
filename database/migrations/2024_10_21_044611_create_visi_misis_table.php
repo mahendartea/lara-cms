@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('visi');
             $table->string('misi');
             $table->string('tujuan');
-            $table->string('slogan');
-            $table->string('logo');
+            $table->string('slogan')->nullable();
+            $table->string('logo')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
