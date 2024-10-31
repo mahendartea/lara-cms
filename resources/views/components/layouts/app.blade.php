@@ -18,7 +18,7 @@
 
 </head>
 
-<body>
+<body class="bg-yellow-50">
 
     <livewire:navbar />
 

@@ -101,8 +101,8 @@ class DatabaseSeeder extends Seeder
             Menu::create($menu);
         }
 
-//        $this->call([
-//            NewsSeeder::class,
-//        ]);
+        //        $this->call([
+        //            NewsSeeder::class,
+        //        ]);
     }
 }
