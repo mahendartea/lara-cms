@@ -9,8 +9,6 @@ use App\Models\Member;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
-use Filament\Forms\Components\Grid;
-use Filament\Tables\Actions\Action;
 use Filament\Forms\Components\Radio;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
@@ -18,12 +16,10 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\ToggleColumn;
-use Illuminate\Database\Eloquent\Builder;
-use Filament\Tables\Columns\BooleanColumn;
-use Filament\Forms\Components\ToggleButtons;
 use App\Filament\Resources\MemberResource\Pages;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use App\Filament\Resources\MemberResource\RelationManagers;
+use pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction;
+use pxlrbt\FilamentExcel\Exports\ExcelExport;
+use pxlrbt\FilamentExcel\Actions\Tables\ExportAction;  // Ubah import ini
 
 class MemberResource extends Resource
 {
@@ -145,7 +141,7 @@ class MemberResource extends Resource
                     ->label('Tanggal Lahir'),
                 TextColumn::make('gender')
                     ->sortable()
-                    ->getStateUsing(fn($record) => $record->gender === 'L' ? 'Laki-laki' : 'Perempuan')
+                    ->getStateUsing(fn ($record) => $record->gender === 'L' ? 'Laki-laki' : 'Perempuan')
                     ->label('Jenis Kelamin'),
                 ImageColumn::make('foto')
                     ->label('Gambar')
@@ -153,7 +149,7 @@ class MemberResource extends Resource
                     ->height(100),
                 ToggleColumn::make('status')
                     ->label('Status')
-                    ->tooltip(fn($record) => $record->status ? 'Aktif' : 'Tidak Aktif')
+                    ->tooltip(fn ($record) => $record->status ? 'Aktif' : 'Tidak Aktif')
 
             ])
             ->filters([
@@ -163,15 +159,22 @@ class MemberResource extends Resource
                 Tables\Actions\ActionGroup::make([
                     Tables\Actions\ViewAction::make(),
                     Tables\Actions\EditAction::make(),
-                    Tables\Actions\DeleteAction::make()
+                    Tables\Actions\DeleteAction::make(),
                 ])
             ])
             ->headerActions([
-                // ...
+                ExportAction::make()
+                    ->label('Export Excel')
+                    ->exports([
+                        ExcelExport::make()
+                            ->withFilename(fn ($resource) => $resource::getLabel())
+                            ->fromForm()
+                    ])
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
+                    ExportBulkAction::make()
                 ]),
             ]);
     }
@@ -190,6 +193,15 @@ class MemberResource extends Resource
             'create' => Pages\CreateMember::route('/create'),
             'edit' => Pages\EditMember::route('/{record}/edit'),
             // 'view' => Pages\ViewMember::route('/{record}'),
+        ];
+    }
+
+    public static function getActions(): array
+    {
+        return [
+            ExportAction::make()->exports([
+                ExcelExport::make('table')->withFilename(fn ($resource) => $resource::getLabel()),
+            ])
         ];
     }
 }
